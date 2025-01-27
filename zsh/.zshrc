@@ -2,7 +2,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 if [[ `uname` == "Darwin" ]]; then
-	OSX=1
+    OSX=1
 fi
 
 ZSH_THEME="robbyrussell"
@@ -23,6 +23,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 eval "$(rbenv init - --no-rehash zsh)"
