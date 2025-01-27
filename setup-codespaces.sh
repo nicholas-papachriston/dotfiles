@@ -30,3 +30,7 @@ rm nvim.appimage
 cd dotfiles
 
 stow nvim ruby zsh git
+
+# Setup Neovim
+# Install lazyvim plugins
+$HOME/bin/nvim --headless -c 'luafile install-lazynvim.lua' -c 'qall'
