@@ -1,6 +1,6 @@
 # dotfiles
 
-Largely inspired by The Amazing Grandos AKA Pauls [dotfiles](https://github.com/paul/dotfiles).
+Largely inspired by Paul's [dotfiles](https://github.com/paul/dotfiles).
 
 This repository contains configuration files (dotfiles) for various tools and applications. By using [GNU Stow](https://www.gnu.org/software/stow/), these configurations can easily be managed and deployed across different systems.
 
