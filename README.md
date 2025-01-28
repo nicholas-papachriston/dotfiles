@@ -49,9 +49,10 @@ When running nvim in a code dir.
 The leader key `space` will bring up a menu with short cuts. For instance 
 
 - `space` then `f` (file) then
-  - `e` will bring up an side explorer
-  - `f` fuzzy search
-  - `t` a terminal
-- `:` then `G` is a short cut for git commands eg
+  - side file explorer `e`
+  - fuzzy file search `f` 
+  - terminal `t`
+- short cut for git commands `:` then `G`
   -  `G commit -m "fea: foobar"`
-- `z` then `c` will folder code under the cursor
+- fold code under the cursor `z` then `c`
+- vertical windows split `w` then `v`
