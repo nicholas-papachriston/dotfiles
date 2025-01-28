@@ -54,3 +54,4 @@ The leader key `space` will bring up a menu with short cuts. For instance
   - `t` a terminal
 - `:` then `G` is a short cut for git commands eg
   -  `G commit -m "fea: foobar"`
+- `z` then `c` will folder code under the cursor
