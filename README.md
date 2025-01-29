@@ -56,3 +56,7 @@ The leader key `space` will bring up a menu with short cuts. For instance
   -  `G commit -m "fea: foobar"`
 - fold code under the cursor `z` then `c`
 - vertical windows split `w` then `v`
+- cut/copy/delete `v` to start "visual mode" (select text with arrow keys) then
+  - `y` to "yank" copy
+  - `p` to paste
+  - `d` to delete
