@@ -2,4 +2,26 @@
   # secrets
   path = ~/.gitconfig.local
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true
+[core]
+  editor = nvim
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = auto
+[alias]
+  b     = branch
+  p     = pull
+  co    = checkout
+  c     = commit
+  ci    = commit -a
+  a     = add
+  st    = status -sb
+  dft   = difftool
+  s     = switch
+  sn    = switch -c
+
+
+  graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
