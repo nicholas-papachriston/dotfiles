@@ -29,7 +29,7 @@ rm nvim.appimage
 
 cd dotfiles
 
-stow nvim ruby zsh git
+stow nvim zsh git
 
 # Setup Neovim
 # Install lazyvim plugins
