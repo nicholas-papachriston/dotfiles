@@ -1,0 +1,4 @@
+return {
+  "snacks.nvim",
+  opts = {},
+}
