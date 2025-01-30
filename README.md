@@ -12,10 +12,13 @@ For example, if you "stow" the nvim directory, Stow will link its contents into 
 
 # Initial Setup
 
-Ensure you have GNU Stow installed on your system. You can install it using your package manager:
+Install [brew](https://brew.sh/) for both linux or mac.
 
-- macOS: brew install stow
-- Ubuntu/Debian: sudo apt install stow
+Ensure you have GNU Stow installed on your system.
+
+```shell
+brew install stow ripgrep jesseduffield/lazygit/lazygit
+```
 
 Then clone this repo somewhere. Then unstow a configuration. (Not it will error if any files would be overwritten)
 
