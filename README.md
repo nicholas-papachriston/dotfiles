@@ -14,7 +14,7 @@ For example, if you "stow" the nvim directory, Stow will link its contents into 
 
 Install [brew](https://brew.sh/) for both linux or mac.
 
-Ensure you have GNU Stow installed on your system.
+Ensure you have GNU Stow installed on your system. Ripgrep and Lazygit are needed later.
 
 ```shell
 brew install stow ripgrep jesseduffield/lazygit/lazygit
