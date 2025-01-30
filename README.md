@@ -63,3 +63,5 @@ The leader key `space` will bring up a menu with short cuts. For instance
   - `y` to "yank" copy
   - `p` to paste
   - `d` to delete
+- When you have multiple files open they are called "buffers" (tabs are diffrent)
+  - `space` then `b` will allow you to open/close switch buffers.
