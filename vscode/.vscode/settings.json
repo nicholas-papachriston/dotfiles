@@ -1,0 +1,183 @@
+{
+    // Language-specific settings
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "biomejs.biome",
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "biomejs.biome",
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "vscode.markdown-language-features"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+    },
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "biomejs.biome",
+        "editor.tabSize": 2
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    // Language features and tools
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "cmake.showOptionsMovedNotification": false,
+    "files.associations": {
+        "Makefile": "makefile"
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "makefile.configureOnOpen": true,
+    "nix.enableLanguageServer": true,
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.diagnosticMode": "workspace",
+    "python.languageServer": "Pylance",
+    "rust-analyzer.diagnostics.disabled": [
+        "unresolved-proc-macro",
+        "unresolved-macro-call",
+        "macro-error"
+    ],
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "zig.zls.path": "zls",
+    // Editor settings
+    "editor.codeActionsOnSave": {
+        "source.organizeImports.biome": "explicit"
+    },
+    "editor.largeFileOptimizations": true,
+    "editor.minimap.enabled": false,
+    "editor.suggestSelection": "first",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    // Explorer and file settings
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.autoSave": "afterDelay",
+    // Git settings
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.inputValidationLength": 700,
+    "git.inputValidationSubjectLength": 500,
+    "git.openRepositoryInParentFolders": "always",
+    "gitlens.views.commits.files.layout": "list",
+    // GitHub Copilot settings
+    "github.copilot.advanced": {},
+    "github.copilot.chat.edits.suggestRelatedFilesForTests": false,
+    "github.copilot.chat.followUps": "never",
+    "github.copilot.chat.temporalContext.enabled": true,
+    "github.copilot.enable": {
+        "markdown": true,
+        "plaintext": true,
+        "scminput": true
+    },
+    // Notebook settings
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    // Search settings
+    "json.maxItemsComputed": 500000,
+    "search.exclude": {
+        "**/node_modules": false
+    },
+    "search.useIgnoreFiles": false,
+    // Security and telemetry
+    "redhat.telemetry.enabled": false,
+    "security.workspace.trust.enabled": true,
+    // Terminal settings
+    "terminal.explorerKind": "external",
+    // Workbench settings
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "none",
+    // Spelling dictionary
+    "cSpell.userWords": [
+        "appdev",
+        "asyncio",
+        "awscli",
+        "biomejs",
+        "booter",
+        "BOTTLEROCKET",
+        "certificatemanager",
+        "chrono",
+        "Cooldown",
+        "cpus",
+        "creds",
+        "Diffie",
+        "dmarc",
+        "DNSKEY",
+        "Dockerized",
+        "domainkey",
+        "EFORMERR",
+        "elasticloadbalancingv",
+        "elbv",
+        "geolite",
+        "hyperparameters",
+        "jsonwebtoken",
+        "Launchpoint",
+        "launchpoints",
+        "liongard",
+        "localstack",
+        "maturin",
+        "maxmind",
+        "Millis",
+        "miniconda",
+        "Modelfile",
+        "msal",
+        "nameserver",
+        "NSEC",
+        "numpy",
+        "odata",
+        "ollama",
+        "onionscan",
+        "opencv",
+        "overfitting",
+        "papachriston",
+        "pycache",
+        "pyinstaller",
+        "pylint",
+        "pytest",
+        "QUICKVIEWS",
+        "RRSIG",
+        "Runtimes",
+        "rustup",
+        "scikit",
+        "scipy",
+        "strat",
+        "tauri",
+        "underfitting",
+        "unzipper",
+        "uuidv",
+        "venv",
+        "whois",
+        "WHOISXML",
+        "zipfile"
+    ]
+}
