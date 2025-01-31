@@ -50,7 +50,6 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
     context                   # user@host
-    dir                       # current directory
     vcs                       # git status
     status
     ip
@@ -63,7 +62,7 @@
     virtualenv                # python virtual environment
     dir_writable
     root_indicator
-    os_icon
+    dir                       # current directory
     prompt_char               # prompt symbol
   )
 
