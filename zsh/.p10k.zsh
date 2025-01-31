@@ -64,7 +64,6 @@
     dir_writable
     root_indicator
     os_icon
-    vi_mode
     prompt_char               # prompt symbol
   )
 
