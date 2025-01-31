@@ -16,6 +16,10 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
+# env vars
+# hugging face
+export HF_HUB_ENABLE_HF_TRANSFER=1
+
 # Path configurations
 # TODO change to use .go
 export GO_PATH=$HOME/go
