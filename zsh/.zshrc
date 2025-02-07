@@ -23,14 +23,11 @@ export HF_HUB_ENABLE_HF_TRANSFER=1
 # Path configurations
 # TODO change to use .go
 export GO_PATH=$HOME/go
-# TODO change to use uv only
-export PYENV_ROOT="$HOME/.pyenv"
 export BUN_INSTALL="$HOME/.bun"
 PATH="$PATH:\
 /usr/local/Cellar/python@3.11/3.11.10/bin:\
 $GO_PATH/bin:\
 $BUN_INSTALL/bin:\
-$PYENV_ROOT/bin:\
 $HOME/.local/bin"
 PATH="$(brew --prefix)/opt/python@3.11/libexec/bin:$PATH"
 # Rust
@@ -45,10 +42,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
-# Python environment configuration
-# TODO change to use uv only
-eval "$(pyenv init -)"
 
 # To customize prompt, run `p10k configure` or edit $HOME/.p10k.zsh.
 source "$HOME/.p10k.zsh"

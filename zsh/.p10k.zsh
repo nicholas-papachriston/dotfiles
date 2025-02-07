@@ -38,51 +38,72 @@
   [[ $ZSH_VERSION == (5.<1->*|<6->.*) ]] || return
 
   # Prompt colors.
-  local grey='242'
-  local red='#FF5C57'
-  local yellow='#F3F99D'
-  local blue='#57C7FF'
-  local magenta='#FF6AC1'
-  local cyan='#9AEDFE'
-  local white='#F1F1F0'
+  local grey='#8B8B8B'
+  local red='#FF5555'
+  local yellow='#F1FA8C'
+  local blue='#62D6E8'
+  local magenta='#FF79C6'
+  local cyan='#8BE9FD'
+  local white='#F8F8F2'
+  local green='#50FA7B'
+  local orange='#FFB86C'
 
-  # Left prompt segments.
+  # Left prompt segments
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-    # =========================[ Line #1 ]=========================
-    context                   # user@host
-    vcs                       # git status
-    status
-    ip
-    vpn_ip
-    public_ip
-    time
-    date
-    # =========================[ Line #2 ]=========================
-    newline                   # \n
-    virtualenv                # python virtual environment
-    dir_writable
-    root_indicator
-    dir                       # current directory
-    prompt_char               # prompt symbol
+    # Line 1
+    os_icon     # OS identifier
+    context     # user@host
+    dir         # current directory
+    vcs         # git status
+    kubecontext # kubernetes context
+    aws         # AWS profile
+    terraform   # terraform workspace
+    # Line 2
+    newline
+    status          # exit code
+    background_jobs # background jobs counter
+    prompt_char     # prompt symbol
   )
 
-  # Right prompt segments.
+  # Right prompt segments
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-    # =========================[ Line #1 ]=========================
+    # Line 1
+    load # CPU load
     ram
     go_version
     node_version
     nodeenv
     nvm
     rust_version
-    command_execution_time    # previous command duration
-    ram
-    load
+    command_execution_time # previous command duration
     disk_usage
-    time                      # current time
-    # =========================[ Line #2 ]=========================
-    newline                   # \n
+    ip     # network IP
+    vpn_ip # VPN IP
+    time   # current time
+    # Line 2
+    newline
   )
+
+  # Segment Styling
+  typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=$green
+  typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=$red
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND=$blue
+  typeset -g POWERLEVEL9K_KUBECONTEXT_FOREGROUND=$cyan
+  typeset -g POWERLEVEL9K_AWS_FOREGROUND=$orange
+  typeset -g POWERLEVEL9K_TERRAFORM_FOREGROUND=$magenta
+  typeset -g POWERLEVEL9K_LOAD_CRITICAL_FOREGROUND=$red
+  typeset -g POWERLEVEL9K_RAM_CRITICAL_FOREGROUND=$red
+  typeset -g POWERLEVEL9K_DISK_USAGE_CRITICAL_FOREGROUND=$red
+
+  # Performance optimizations
+  typeset -g POWERLEVEL9K_MAX_SYNC_UPDATES_PER_SECOND=1
+  typeset -g POWERLEVEL9K_DISK_USAGE_WARNING_LEVEL=80
+  typeset -g POWERLEVEL9K_DISK_USAGE_CRITICAL_LEVEL=90
+
+  # Additional features
+  typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s|helmfile|flux|fluxctl|stern'
+  typeset -g POWERLEVEL9K_AWS_SHOW_ON_COMMAND='aws|awless|terraform|pulumi|terragrunt'
+  typeset -g POWERLEVEL9K_TERRAFORM_SHOW_ON_COMMAND='terraform|pulumi|terragrunt'
 
   # Basic style options that define the overall prompt look.
   typeset -g POWERLEVEL9K_BACKGROUND=                            # transparent background
