@@ -51,35 +51,18 @@
   # Left prompt segments
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # Line 1
-    os_icon     # OS identifier
+    time
     context     # user@host
     dir         # current directory
     vcs         # git status
-    kubecontext # kubernetes context
-    aws         # AWS profile
-    terraform   # terraform workspace
     # Line 2
     newline
-    status          # exit code
-    background_jobs # background jobs counter
     prompt_char     # prompt symbol
   )
 
   # Right prompt segments
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     # Line 1
-    load # CPU load
-    ram
-    go_version
-    node_version
-    nodeenv
-    nvm
-    rust_version
-    command_execution_time # previous command duration
-    disk_usage
-    ip     # network IP
-    vpn_ip # VPN IP
-    time   # current time
     # Line 2
     newline
   )
