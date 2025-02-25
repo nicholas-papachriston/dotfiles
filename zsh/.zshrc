@@ -32,9 +32,9 @@ $HOME/.local/bin"
 PATH="$(brew --prefix)/opt/python@3.11/libexec/bin:$PATH"
 # Rust
 PATH="$PATH:$HOME/.cargo/bin"
-# Postgre
+# PostgreSQL
 export PATH="$HOME/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
-
+export EDITOR="zed --wait"
 # Node Version Manager (NVM) configuration
 export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh"
@@ -45,3 +45,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # To customize prompt, run `p10k configure` or edit $HOME/.p10k.zsh.
 source "$HOME/.p10k.zsh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/npapa/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/npapa/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/npapa/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/npapa/google-cloud-sdk/completion.zsh.inc'; fi
