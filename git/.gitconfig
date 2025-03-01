@@ -1,27 +1,128 @@
+[user]
+  # Set these values in your .gitconfig.local file
+  # name = Your Name
+  # email = your.email@example.com
+
 [include]
-  # secrets
+  # Include user-specific configuration
   path = ~/.gitconfig.local
-[push]
-  autoSetupRemote = true
+
 [core]
   editor = nvim
+  excludesfile = ~/.gitignore_global
+  pager = delta
+  autocrlf = input
+  safecrlf = warn
+  whitespace = trailing-space,space-before-tab
+
+[init]
+  defaultBranch = main
+
+[pull]
+  rebase = true
+
+[push]
+  default = current
+  autoSetupRemote = true
+
+[fetch]
+  prune = true
+
+[diff]
+  algorithm = histogram
+  colorMoved = default
+  tool = difftastic
+
+[difftool]
+  prompt = false
+
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+  difftool = true
+
+[merge]
+  conflictstyle = diff3
+  tool = nvim -d
+
 [color]
+  ui = auto
   diff = auto
   status = auto
   branch = auto
   interactive = auto
-  ui = auto
+
+[delta]
+  navigate = true
+  light = false
+  side-by-side = true
+  line-numbers = true
+
+[interactive]
+  diffFilter = delta --color-only
+
 [alias]
-  b     = branch
-  p     = pull
-  co    = checkout
-  c     = commit
-  ci    = commit -a
-  a     = add
-  st    = status -sb
-  dft   = difftool
-  s     = switch
-  sn    = switch -c
+  # Shorthand commands
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  df = diff
+  lg = log --graph
+  
+  # Useful aliases
+  unstage = reset HEAD --
+  last = log -1 HEAD
+  visual = !gitk
+  history = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  today = log --stat --since='1 day ago' --graph --pretty=oneline --abbrev-commit --date=relative
+  undo = reset --soft HEAD^
+  amend = commit --amend --no-edit
+  cleanup = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
+  
+  # Branch management
+  new-branch = "!f() { git checkout -b \"$1\"; }; f"
+  delete-branch = "!f() { git branch -D \"$1\"; }; f"
+  orphan = "!f() { git checkout --orphan \"$1\"; git rm -rf .; }; f"
+  
+  # Commit message shortcuts
+  feat = "!f() { git commit -m \"feat: $1\"; }; f"
+  fix = "!f() { git commit -m \"fix: $1\"; }; f"
+  docs = "!f() { git commit -m \"docs: $1\"; }; f"
+  style = "!f() { git commit -m \"style: $1\"; }; f"
+  refactor = "!f() { git commit -m \"refactor: $1\"; }; f"
+  test = "!f() { git commit -m \"test: $1\"; }; f"
+  chore = "!f() { git commit -m \"chore: $1\"; }; f"
+  
+  # Stash shortcuts
+  save = stash save
+  pop = stash pop
+  
+  # Advanced log formats
+  graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  logline = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  
+  # Find in codebase
+  find = "!f() { git grep \"$1\" $(git rev-list --all); }; f"
+  
+  # Who modified a particular line (blame)
+  who = "!f() { git blame -L\"$1\",\"$1\" \"$2\"; }; f"
+  
+  # Show the last tag
+  lasttag = describe --tags --abbrev=0
+  
+  # Show the changes since the last tag
+  changes = "!f() { git log $(git describe --tags --abbrev=0)..HEAD --oneline; }; f"
 
+[credential]
+  helper = cache --timeout=3600
 
-  graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+
+[url "git@github.com:"]
+  insteadOf = gh:

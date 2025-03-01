@@ -1,2 +1,8 @@
---target ${HOME}
--v
+--target=${HOME}
+--verbose=2
+--no-folding
+--ignore=setup-.+\.sh
+--ignore=\.DS_Store
+--ignore=^\.git
+--ignore=^\.gitignore
+--ignore=README.*

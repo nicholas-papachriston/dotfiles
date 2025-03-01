@@ -1,0 +1,158 @@
+# Cursor Ignore File
+# Patterns to exclude from Cursor indexing for better performance
+
+# System files
+.DS_Store
+Thumbs.db
+.directory
+*.swp
+*.swo
+*~
+
+# Editor files
+.vscode/
+.idea/
+.vs/
+*.sublime-*
+*.code-workspace
+
+# Build outputs
+dist/
+build/
+out/
+target/
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.class
+*.jar
+*.war
+*.ear
+
+# Dependencies
+node_modules/
+vendor/
+bower_components/
+jspm_packages/
+.pnp/
+.pnp.js
+.yarn/
+.npm/
+.nuxt/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+composer.lock
+Gemfile.lock
+Cargo.lock
+poetry.lock
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+debug.log
+
+# Dotfiles specific
+zsh/.oh-my-zsh/
+zsh/.zsh_history
+zsh/.zsh_sessions/
+nvim/plugged/
+nvim/.lazy/
+nvim/.netrwhist
+vim/.netrwhist
+.config/
+.tmux/plugins/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Testing
+coverage/
+.nyc_output/
+.jest/
+.eslintcache/
+.vitepress/cache/
+.prettiercache/
+.tscache/
+
+# Temporary files
+tmp/
+temp/
+.cache/
+.sass-cache/
+.parcel-cache/
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+env/
+venv/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+.python-version
+.ruby-version
+.node-version
+.tool-versions
+.nvmrc
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Certificates & keys
+*.pem
+*.crt
+*.key
+*.p12
+*.pfx
+*.cert
+
+# Large media files
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.webm
+*.mp3
+*.wav
+*.ogg
+*.flac
+*.aac
+
+# Archives
+*.zip
+*.tar.gz
+*.tar.bz2
+*.rar
+*.7z
+*.iso
+
+# AI & ML related
+.curlrc
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.pyo
+*.pyd
+.Python 

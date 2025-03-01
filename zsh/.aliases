@@ -1,0 +1,62 @@
+# Navigation shortcuts
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias ~="cd ~"
+alias -- -="cd -"
+
+# List directory contents
+alias ls="ls -G"                # colorize ls output
+alias ll="ls -la"               # list all files in long format
+alias la="ls -lAh"              # list all files with human-readable sizes
+alias l="ls -CF"                # list in columns with file type indicators
+
+# Git shortcuts
+alias g="git"
+alias ga="git add"
+alias gc="git commit"
+alias gco="git checkout"
+alias gs="git status"
+alias gp="git push"
+alias gl="git pull"
+alias gd="git diff"
+alias gb="git branch"
+alias gf="git fetch"
+alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# System shortcuts
+alias brew-update="brew update && brew upgrade && brew cleanup"
+alias ip="curl -s https://ipinfo.io/ip"
+alias localip="ipconfig getifaddr en0"
+
+# Utility shortcuts
+alias mkcd='function _mkcd() { mkdir -p "$1" && cd "$1"; }; _mkcd'
+alias path='echo -e ${PATH//:/\\n}'
+alias reload="source ~/.zshrc"
+
+# Development shortcuts
+alias py="python3"
+alias ipy="ipython"
+alias serve="python3 -m http.server"
+alias dc="docker-compose"
+
+# npm/yarn/bun shortcuts
+alias ni="npm install"
+alias nid="npm install --save-dev"
+alias nrs="npm run start"
+alias nrd="npm run dev"
+alias nrb="npm run build"
+alias bi="bun install"
+alias bd="bun dev"
+alias br="bun run"
+
+# Tmux shortcuts
+alias t="tmux"
+alias ta="tmux attach"
+alias tn="tmux new -s"
+alias tl="tmux list-sessions"
+
+# Search shortcuts
+alias ff="find . -type f -name"
+alias fd="find . -type d -name"
+alias grep="grep --color=auto" 

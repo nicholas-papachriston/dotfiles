@@ -1,47 +1,83 @@
 {
   "recommendations": [
-    // Git
+    // Theme and UI
+    "dracula-theme.theme-dracula",
+    "pkief.material-icon-theme",
+    "johnpapa.vscode-peacock",
+    "aaron-bond.better-comments",
+    
+    // Editor enhancements
+    "usernamehw.errorlens",
     "eamodio.gitlens",
-
-    // JavaScript
-    "oven.bun-vscode",
+    "streetsidesoftware.code-spell-checker",
+    "oderwat.indent-rainbow",
+    "visualstudioexptteam.vscodeintellicode",
     "esbenp.prettier-vscode",
-
-    // TypeScript
-    "better-ts-errors.better-ts-errors",
-    "MylesMurphy.prettify-ts",
-
+    "EditorConfig.EditorConfig",
+    "vscode-icons-team.vscode-icons",
+    
+    // Collaboration
+    "ms-vsliveshare.vsliveshare",
+    
+    // Productivity
+    "yzhang.markdown-all-in-one",
+    "christian-kohler.path-intellisense",
+    "formulahendry.auto-rename-tag",
+    "formulahendry.code-runner",
+    "wayou.vscode-todo-highlight",
+    "gruntfuggly.todo-tree",
+    
+    // Web Development
+    "ritwickdey.liveserver",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "ms-azuretools.vscode-docker",
+    
+    // JavaScript/TypeScript
+    "dbaeumer.vscode-eslint",
+    "ms-vscode.vscode-typescript-next",
+    "wix.vscode-import-cost",
+    
+    // React
+    "dsznajder.es7-react-js-snippets",
+    "styled-components.vscode-styled-components",
+    
+    // Python
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.black-formatter",
+    "matangover.mypy",
+    
     // Rust
     "rust-lang.rust-analyzer",
-    "dustypomerleau.rust-syntax",
-    "jscearcy.rust-doc-viewer",
-
-
-    // Markdown
-    "bierner.markdown-preview-github-styles",
-    "bierner.markdown-emoji",
-    "bierner.emojisense",
-    "bierner.markdown-checkbox",
-    "bierner.jsdoc-markdown-highlighting",
-
-    // TOML
-    "tamasfe.even-better-toml",
-
+    "serayuzgur.crates",
+    "vadimcn.vscode-lldb",
+    
     // Go
     "golang.go",
-
-    // Zig
-    "ziglang.vscode-zig",
-
-    // C/C++
-    "clang.clangd",
-    "ms-vscode.cmake-tools",
-    "xaver.clang-format",
-    "vadimcn.vscode-lldb",
-
-    // Other
-    "bierner.comment-tagged-templates",
-    "oderwat.indent-rainbow",
-    "fill-labs.dependi"
-  ],
+    
+    // Markdown
+    "yzhang.markdown-all-in-one",
+    "bierner.markdown-preview-github-styles",
+    "davidanson.vscode-markdownlint",
+    
+    // YAML/JSON/Data
+    "redhat.vscode-yaml",
+    "eriklynd.json-tools",
+    
+    // Git
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+    
+    // Terminal
+    "tyriar.terminal-tabs",
+    
+    // Testing and Debugging
+    "ryanluker.vscode-coverage-gutters",
+    "ms-vscode.test-adapter-converter",
+    
+    // Remote Development
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode-remote.remote-ssh"
+  ]
 }

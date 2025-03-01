@@ -1,7 +1,7 @@
 {
     // Language-specific settings
     "[css]": {
-        "editor.defaultFormatter": "vscode.css-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
