@@ -1,0 +1,60 @@
+[
+  // Navigation shortcuts
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-up": "editor::MoveLineUp",
+      "alt-down": "editor::MoveLineDown",
+      "cmd-d": "editor::DuplicateLine",
+      "alt-shift-up": "editor::AddSelectionAbove",
+      "alt-shift-down": "editor::AddSelectionBelow",
+      "cmd-shift-l": "editor::SelectAllMatches",
+      "cmd-shift-k": "editor::DeleteLine",
+      "cmd-/": "editor::ToggleComments",
+      "cmd-]": "editor::Indent",
+      "cmd-[": "editor::Outdent"
+    }
+  },
+  
+  // Search and navigation
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-p": "workspace::QuickOpen",
+      "cmd-shift-f": "search::ToggleSearch",
+      "cmd-shift-o": "outline::Toggle",
+      "cmd-shift-e": "project_panel::ToggleFocus",
+      "cmd-b": "project_panel::ToggleVisibility"
+    }
+  },
+  
+  // Multiple cursor support
+  {
+    "context": "Editor && mode == Full",
+    "bindings": {
+      "cmd-click": "editor::AddCursorAtPosition",
+      "alt-cmd-up": "editor::AddSelectionsFromHighlightsUpward",
+      "alt-cmd-down": "editor::AddSelectionsFromHighlightsDownward"
+    }
+  },
+  
+  // LSP features
+  {
+    "context": "Editor",
+    "bindings": {
+      "f12": "editor::GoToDefinition",
+      "shift-f12": "editor::FindAllReferences",
+      "f2": "editor::Rename",
+      "ctrl-space": "editor::ShowCompletions",
+      "cmd-k cmd-i": "editor::ShowHover"
+    }
+  },
+  
+  // Terminal
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-t": "terminal_panel::ToggleFocus"
+    }
+  }
+] 

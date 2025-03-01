@@ -1,0 +1,107 @@
+[
+  // TypeScript/JavaScript snippets
+  {
+    "name": "console.log",
+    "pattern": "^cl$",
+    "scope": ["source.ts", "source.js", "source.tsx", "source.jsx"],
+    "completion": "console.log($0)"
+  },
+  {
+    "name": "async function",
+    "pattern": "^af$",
+    "scope": ["source.ts", "source.js", "source.tsx", "source.jsx"],
+    "completion": "async function $1() {\n\t$0\n}"
+  },
+  {
+    "name": "arrow function",
+    "pattern": "^arw$",
+    "scope": ["source.ts", "source.js", "source.tsx", "source.jsx"],
+    "completion": "($1) => {\n\t$0\n}"
+  },
+  {
+    "name": "import statement",
+    "pattern": "^imp$",
+    "scope": ["source.ts", "source.js", "source.tsx", "source.jsx"],
+    "completion": "import { $2 } from '$1';"
+  },
+  {
+    "name": "React useEffect",
+    "pattern": "^uef$",
+    "scope": ["source.ts", "source.js", "source.tsx", "source.jsx"],
+    "completion": "useEffect(() => {\n\t$0\n}, [$1]);"
+  },
+
+  // Rust snippets
+  {
+    "name": "derive debug",
+    "pattern": "^#d$",
+    "scope": ["source.rust"],
+    "completion": "#[derive(Debug$1)]\n$0"
+  },
+  {
+    "name": "match statement",
+    "pattern": "^match$",
+    "scope": ["source.rust"],
+    "completion": "match $1 {\n\t$2 => $3,\n\t_ => $0,\n}"
+  },
+  {
+    "name": "result match",
+    "pattern": "^resmatch$",
+    "scope": ["source.rust"],
+    "completion": "match $1 {\n\tOk($2) => $3,\n\tErr($4) => $0,\n}"
+  },
+  {
+    "name": "option match",
+    "pattern": "^optmatch$",
+    "scope": ["source.rust"],
+    "completion": "match $1 {\n\tSome($2) => $3,\n\tNone => $0,\n}"
+  },
+
+  // Python snippets
+  {
+    "name": "if name main",
+    "pattern": "^ifmain$",
+    "scope": ["source.python"],
+    "completion": "if __name__ == \"__main__\":\n\t$0"
+  },
+  {
+    "name": "for loop",
+    "pattern": "^for$",
+    "scope": ["source.python"],
+    "completion": "for $1 in $2:\n\t$0"
+  },
+  {
+    "name": "list comprehension",
+    "pattern": "^lc$",
+    "scope": ["source.python"],
+    "completion": "[$1 for $2 in $3]$0"
+  },
+  
+  // C/C++ snippets
+  {
+    "name": "include",
+    "pattern": "^inc$",
+    "scope": ["source.c", "source.cpp"],
+    "completion": "#include <$1>$0"
+  },
+  {
+    "name": "main function",
+    "pattern": "^main$",
+    "scope": ["source.c", "source.cpp"],
+    "completion": "int main(int argc, char *argv[]) {\n\t$0\n\treturn 0;\n}"
+  },
+  
+  // Zig snippets
+  {
+    "name": "main",
+    "pattern": "^main$",
+    "scope": ["source.zig"],
+    "completion": "pub fn main() !void {\n\t$0\n}"
+  },
+  {
+    "name": "test",
+    "pattern": "^test$",
+    "scope": ["source.zig"],
+    "completion": "test \"$1\" {\n\t$0\n}"
+  }
+] 

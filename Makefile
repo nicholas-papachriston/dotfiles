@@ -31,9 +31,9 @@ STOW := stow
 BREW := brew
 
 .PHONY: all install help dependencies backup clean \
-	install-zsh install-nvim install-tmux install-git install-vscode install-cursor \
-	stow-zsh stow-nvim stow-tmux stow-git stow-vscode stow-cursor \
-	homebrew oh-my-zsh headless
+	install-zsh install-nvim install-tmux install-git install-vscode install-cursor install-zed \
+	stow-zsh stow-nvim stow-tmux stow-git stow-vscode stow-cursor stow-zed \
+	homebrew brew-export brew-install oh-my-zsh headless
 
 help:
 	@echo -e "$(BLUE)Dotfiles Makefile$(NC)"
@@ -51,10 +51,15 @@ help:
 	@echo -e "  $(GREEN)make install-git$(NC)  - Install and configure Git"
 	@echo -e "  $(GREEN)make install-vscode$(NC) - Install VS Code settings"
 	@echo -e "  $(GREEN)make install-cursor$(NC) - Install Cursor configuration"
+	@echo -e "  $(GREEN)make install-zed$(NC) - Install Zed editor configuration"
+	@echo
+	@echo -e "Homebrew:"
+	@echo -e "  $(GREEN)make brew-export$(NC) - Export current Homebrew packages to Brewfile"
+	@echo -e "  $(GREEN)make brew-install$(NC) - Install packages from Brewfile"
 
 all: backup dependencies install
 
-install: stow-zsh stow-nvim stow-tmux stow-git stow-vscode stow-cursor
+install: stow-zsh stow-nvim stow-tmux stow-git stow-vscode stow-cursor stow-zed
 	@echo -e "$(GREEN)All dotfiles have been installed!$(NC)"
 	@echo -e "$(YELLOW)NOTE: You may need to restart your terminal or run 'source ~/.zshrc' for changes to take effect.$(NC)"
 
@@ -64,7 +69,13 @@ headless: backup dependencies install
 dependencies: homebrew
 	@echo -e "$(BLUE)Installing dependencies...$(NC)"
 ifeq ($(PACKAGE_MANAGER),brew)
-	$(BREW) install stow neovim tmux ripgrep fd fzf bat git
+	@if [ -f "$(DOTFILES_DIR)/Brewfile" ]; then \
+		echo -e "$(BLUE)Installing from Brewfile...$(NC)"; \
+		brew bundle install --file="$(DOTFILES_DIR)/Brewfile"; \
+	else \
+		echo -e "$(BLUE)Installing essential packages...$(NC)"; \
+		$(BREW) install stow neovim tmux ripgrep fd fzf bat git; \
+	fi
 else ifeq ($(PACKAGE_MANAGER),apt)
 	sudo apt-get update
 	sudo apt-get install -y stow neovim tmux ripgrep fd-find fzf bat git
@@ -114,6 +125,18 @@ ifeq ($(OS),Darwin)
 	else \
 		echo -e "$(GREEN)Homebrew already installed!$(NC)"; \
 	fi
+else ifeq ($(OS),Linux)
+	@if ! command -v brew >/dev/null; then \
+		echo -e "$(BLUE)Installing Homebrew on Linux...$(NC)"; \
+		/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; \
+		test -d ~/.linuxbrew && eval "$$(~/.linuxbrew/bin/brew shellenv)"; \
+		test -d /home/linuxbrew/.linuxbrew && eval "$$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; \
+		echo "eval \"\$$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile; \
+		eval "$$($(brew --prefix)/bin/brew shellenv)"; \
+		echo -e "$(GREEN)Homebrew installed!$(NC)"; \
+	else \
+		echo -e "$(GREEN)Homebrew already installed!$(NC)"; \
+	fi
 endif
 
 # Oh-My-ZSH installation
@@ -149,6 +172,16 @@ stow-cursor:
 		echo -e "$(GREEN)Cursor configuration installed!$(NC)"; \
 	else \
 		echo -e "$(RED)Cursor configuration not found.$(NC)"; \
+	fi
+
+# Zed configuration
+stow-zed:
+	@echo -e "$(BLUE)Setting up Zed configuration...${NC}"
+	@if [ -d "$(DOTFILES_DIR)/zed/.config" ]; then \
+		$(STOW) --no-folding -v -R zed; \
+		echo -e "$(GREEN)Zed configuration stowed!$(NC)"; \
+	else \
+		echo -e "$(RED)Zed configuration not found.$(NC)"; \
 	fi
 
 # Stowing configuration files
@@ -236,4 +269,23 @@ install-vscode: stow-vscode
 	@echo -e "$(GREEN)VSCode configuration complete!$(NC)"
 
 install-cursor: stow-cursor
-	@echo -e "$(GREEN)Cursor configuration complete!$(NC)" 
+	@echo -e "$(GREEN)Cursor configuration complete!$(NC)"
+
+install-zed: stow-zed
+	@echo -e "$(BLUE)Setting up Zed editor...$(NC)"
+	@if [ -f "$(DOTFILES_DIR)/zed/setup-zed.sh" ]; then \
+		chmod +x "$(DOTFILES_DIR)/zed/setup-zed.sh"; \
+		"$(DOTFILES_DIR)/zed/setup-zed.sh"; \
+	fi
+	@echo -e "$(GREEN)Zed configuration complete!$(NC)"
+
+# Homebrew setup and export
+brew-export:
+	@echo -e "$(BLUE)Exporting Homebrew configuration...$(NC)"
+	@brew bundle dump --force --file=$(DOTFILES_DIR)/Brewfile
+	@echo -e "$(GREEN)Homebrew configuration exported!$(NC)"
+
+brew-install:
+	@echo -e "$(BLUE)Installing Homebrew packages...$(NC)"
+	@brew bundle install --file=$(DOTFILES_DIR)/Brewfile
+	@echo -e "$(GREEN)Homebrew packages installed!$(NC)" 

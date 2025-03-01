@@ -117,6 +117,8 @@ custom_install() {
   read -p "Install Git configs? (y/n): " install_git
   read -p "Install VS Code configs? (y/n): " install_vscode
   read -p "Install Cursor configuration? (y/n): " install_cursor
+  read -p "Install Zed configurations? (y/n): " install_zed
+  read -p "Install Homebrew packages? (y/n): " install_brew
   
   # Always run backup and dependencies
   make backup
@@ -129,6 +131,8 @@ custom_install() {
   [[ "$install_git" =~ ^[Yy]$ ]] && make install-git
   [[ "$install_vscode" =~ ^[Yy]$ ]] && make install-vscode
   [[ "$install_cursor" =~ ^[Yy]$ ]] && make install-cursor
+  [[ "$install_zed" =~ ^[Yy]$ ]] && make install-zed
+  [[ "$install_brew" =~ ^[Yy]$ ]] && brew/setup-brew.sh install
   
   echo -e "${GREEN}Custom installation completed!${NC}"
 }

@@ -1,0 +1,45 @@
+[
+  {
+    "name": "Bun Project",
+    "id": "bun",
+    "grammar": "typescript",
+    "path_suffixes": ["bun.lockb"],
+    "first_line_patterns": ["#!/usr/bin/env bun"],
+    "language_server": {
+      "command": "typescript-language-server",
+      "args": ["--stdio"]
+    },
+    "test_command": {
+      "command": "bun",
+      "args": ["test"]
+    },
+    "run_command": {
+      "command": "bun",
+      "args": ["run"]
+    },
+    "indent": {
+      "tab_size": 2
+    }
+  },
+  {
+    "name": "Python UV Project",
+    "id": "python-uv",
+    "grammar": "python",
+    "path_suffixes": [".venv/pyvenv.cfg", "pyproject.toml"],
+    "language_server": {
+      "command": "pyright-langserver",
+      "args": ["--stdio"]
+    },
+    "test_command": {
+      "command": "uv",
+      "args": ["run", "pytest"]
+    },
+    "run_command": {
+      "command": "uv",
+      "args": ["run", "python"]
+    },
+    "indent": {
+      "tab_size": 4
+    }
+  }
+] 
